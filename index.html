@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Quick Orientate</title>
+</head>
+<body>
+    <div class="contain">
+        <h1 class="header">Quick Orientate</h1>
+        <p class="timer">Timer: <span id="timer" >0</span> s</p>
+        <div class="indicator"></div>
+        <div class="display" id="display">
+            <!-- levels display -->
+            <ul class="levels">
+                <li class="level" data-level="1">
+                    <span class="lvl-info" >10 Questions</span>
+                    <span class="record" id="record1">10 s.</span>
+                </li>
+                <li class="level" data-level="2">
+                    <span class="lvl-info" >20 Questions</span>
+                    <span class="record" id="record1">10 s.</span>
+                </li>
+                <li class="level" data-level="3">
+                    <span class="lvl-info" >30 Questions</span>
+                    <span class="record" id="record1">10 s.</span>
+                </li>
+            </ul>
+        </div>
+        <div class="buttons" id="buttons-contain">
+            <button class="button false-btn" data-truthy="false">False</button>
+            <button class="button true-btn" data-truthy="true">True</button>
+        </div>
+    </div>
+    <script type="module" src="./index.js"></script>
+</body>
+</html>

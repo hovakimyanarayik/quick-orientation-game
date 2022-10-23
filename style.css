@@ -1,0 +1,166 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+
+body {
+    background-color: #111b21;
+}
+
+.contain {
+    width: 500px;
+    height: auto;
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 10px;
+    background-color: #3b4a54;
+    border-radius: 5px;
+    color: white;
+    border: 3px solid #848488;
+    position: relative;
+}
+
+.timer {
+    position: absolute;
+    top: 200px;
+    left: 60px;
+    font-size: 18px;
+    letter-spacing: .5px;
+}
+
+.header{
+    font-weight: 100;
+    letter-spacing: 1.5px;
+    margin-top: 20px;
+}
+
+.display {
+    width: 80%;
+    height: 210px;
+    margin: 150px auto 20px;
+    border: 2px solid #848488;
+    border-radius: 5px;
+    position: relative;
+
+}
+
+.levels {
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    overflow: hidden;
+}
+
+
+.level {
+    height: 70px;
+    width: 100%;
+    padding: 15px;
+    border-bottom: 1px solid #848488;
+    background-color: #54656f;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.level:hover {
+    background-color: #046a62;
+}
+
+
+.buttons {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    font-size: 18px;
+    width: 47%;
+    padding: 7px;
+    border: 1px solid #848488;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+    color: white;
+}
+
+.false-btn {
+    background-color: rgb(230, 118, 118);
+}
+
+.false-btn:hover {
+    background-color: rgb(230, 64, 64);
+}
+
+
+.true-btn {
+    background-color: #63cb77;
+}
+
+.true-btn:hover {
+    background-color: #46e966;
+}
+
+
+
+/* questions */
+
+.questions {
+    width: 100%;
+    height: 100%; 
+    list-style: none;
+    font-size: 24px;
+    padding: 70px 0;
+    overflow-y: scroll;
+}
+::-webkit-scrollbar {
+    width: 0px; 
+    background: transparent; 
+}
+
+.question {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.indicator {
+    width: 375px;
+    height: 70px;
+    position: fixed;
+    top: 420px;
+    margin: 0 auto;
+    z-index: 0;
+    background-color: #63cb77;
+    opacity: .3;
+}
+
+.game-over {
+    width: 100%;
+    height: 100%;
+    background-color: #3b4a54;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.result-sec {
+    color: #63cb77;
+    font-size: 18px;
+}
+
+.penalty-sec {
+    color: rgb(230, 64, 64);
+    font-size: 18px;
+}
