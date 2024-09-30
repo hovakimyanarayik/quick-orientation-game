@@ -16,7 +16,7 @@ let index = 0;
 let count;
 
 function startTimer() {
-    timerId =  setInterval(() => {
+    timerId = setInterval(() => {
         timer.textContent = ++seconds;
     }, 1000)
 }
@@ -34,7 +34,7 @@ function randomNumber1to50() {
 }
 
 function showQuestions(count) {
-    for(let i = 0; i < count; i++) {
+    for (let i = 0; i < count; i++) {
         selectedQuestions.push(questions[randomNumber1to50()])
     }
     display.innerHTML = renderQuestions(selectedQuestions);
@@ -44,11 +44,11 @@ function gameEnd() {
     buttonsContain.removeEventListener('click', gameProcess)
     isOnGame = false;
     display.innerHTML = renderGameOverDisplay(seconds, penalty);
-    if(count == 10 && (+localStorage.getItem('record1') > seconds + penalty || !localStorage.getItem('record1'))) {
+    if (count == 10 && (+localStorage.getItem('record1') > seconds + penalty || !localStorage.getItem('record1'))) {
         localStorage.setItem('record1', seconds + penalty)
-    } else if(count == 20 && (+localStorage.getItem('record2') > seconds + penalty || !localStorage.getItem('record2'))) {
+    } else if (count == 20 && (+localStorage.getItem('record2') > seconds + penalty || !localStorage.getItem('record2'))) {
         localStorage.setItem('record2', seconds + penalty)
-    } else if(count == 30 && (+localStorage.getItem('record3') > seconds + penalty || !localStorage.getItem('record3'))) {
+    } else if (count == 30 && (+localStorage.getItem('record3') > seconds + penalty || !localStorage.getItem('record3'))) {
         localStorage.setItem('record3', seconds + penalty)
     }
     endTimer(timerId);
@@ -60,13 +60,13 @@ function gameEnd() {
 function gameProcess(e) {
     const questionsList = document.querySelector('.questions');
 
-    if(!e.target.dataset.truthy || !isOnGame) return;
+    if (!e.target.dataset.truthy || !isOnGame) return;
 
-    if(e.target.dataset.truthy !== String(selectedQuestions[index].truthy)) {
+    if (e.target.dataset.truthy !== String(selectedQuestions[index].truthy)) {
         penalty += 2;
     }
     index++;
-    if(index >= count) {
+    if (index >= count) {
         // game end 
         gameEnd()
     }
@@ -91,7 +91,7 @@ function resetGame() {
 
 function startGame() {
     resetGame()
-    
+
     // timer
     startTimer();
     // render questions
@@ -107,7 +107,7 @@ function renderLevelsDisplay() {
     display.innerHTML = levelsComponent.render();
     const levels = document.querySelector('.levels');
     levels.addEventListener('click', (e) => {
-        count = e.path.find(el => el.dataset.count).dataset.count;
+        count = e.target.dataset.count
         startGame();
     })
 }
